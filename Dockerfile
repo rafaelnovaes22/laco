@@ -2,10 +2,14 @@ FROM node:20-alpine
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm ci --include=dev
+RUN npm ci --omit=dev
 
-COPY . ./
-RUN npm run build
+COPY src ./src
+COPY public ./public
+ENV NODE_ENV=production
+ENV MEDIA_PATH=/data
+RUN mkdir /data && chown node:node /data
+USER node
 
 EXPOSE 3000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
