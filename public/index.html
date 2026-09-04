@@ -3,163 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deborah Silva | Cuidado em Movimento</title>
-    <meta
-      name="description"
-      content="Deborah Silva une cuidado humano, rotina saudável e movimento consciente para o bem-estar diário."
-    />
-    <meta property="og:title" content="Deborah Silva | Cuidado em Movimento" />
-    <meta
-      property="og:description"
-      content="Conteúdo educativo para um bem-estar contínuo e sustentável."
-    />
+    <title>Para Débora</title>
+    <meta name="description" content="Uma mensagem feita para uma pessoa só." />
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex" />
+    <meta name="theme-color" content="#3a0f18" />
+    <meta property="og:title" content="Para Débora" />
+    <meta property="og:description" content="Existe algo que eu queria que você ouvisse." />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content="/assets/deborah-portrait.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/assets/site-icon.svg" />
-    <link rel="apple-touch-icon" href="/assets/site-icon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Deborah Silva",
-        "jobTitle": "Enfermeira",
-        "description": "Profissional de cuidado humano com foco em bem-estar, movimento e rotina saudável.",
-        "sameAs": ["https://instagram.com/deboradisilva"],
-        "url": "https://deborasilva.com"
-      }
-    </script>
   </head>
   <body>
-    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-    <header class="topbar" role="banner">
-      <div class="brand">
-        <p class="eyebrow">Deborah Silva</p>
-        <h1>Cuidado em movimento</h1>
-      </div>
-      <button id="toggle-theme" class="theme-chip" aria-pressed="false" aria-label="Alternar tema claro e escuro">
-        Tema
-      </button>
-    </header>
+    <div class="grain" aria-hidden="true"></div>
 
-    <main id="conteudo">
-      <section class="hero" aria-labelledby="apresentacao">
+    <section id="intro" class="intro" aria-labelledby="intro-title">
+      <p class="kicker">Uma mensagem para você</p>
+      <h1 id="intro-title">Débora</h1>
+      <p>Existe algo que eu queria que você ouvisse.</p>
+      <button id="open-letter" type="button">Abrir</button>
+    </section>
+
+    <main id="letter" inert>
+      <section class="hero" aria-labelledby="declaration-title">
         <div class="hero-copy">
-          <p class="eyebrow">Enfermagem que cuida de quem se cuida</p>
-          <h2 id="apresentacao">Rotina, movimento e acolhimento</h2>
-          <p>
-            Um espaço para aprender, inspirar e adaptar pequenas práticas de bem-estar.
-            Conteúdos educativos e acessíveis para viver com mais presença, disciplina e
-            gentileza.
+          <p class="kicker">Para uma pessoa inesquecível</p>
+          <h2 id="declaration-title">Eu amo<br />você.</h2>
+          <p class="opening">
+            Algumas verdades demoram para encontrar a forma certa de serem ditas.
+            Esta é a minha.
           </p>
-          <a class="cta" href="#contato" aria-label="Abrir contato por Instagram">Falar no Instagram @deboradisilva</a>
+          <a class="listen-link" href="#nossa-musica">Ouvir nossa música</a>
         </div>
-        <figure class="hero-portrait" aria-label="Retrato editorial de Deborah">
-          <img src="/assets/deborah-portrait.png" alt="Retrato editorial de Deborah Silva" fetchpriority="high" />
+        <figure class="portrait">
+          <img src="/assets/deborah-portrait.png" alt="Retrato de Débora" fetchpriority="high" />
+          <figcaption>Para você, com carinho e verdade.</figcaption>
         </figure>
       </section>
 
-      <section id="nossa-musica" class="sound-letter" aria-labelledby="music-title">
-        <div class="sound-copy">
-          <p class="eyebrow">Música tema</p>
-          <h2 id="music-title">Uma gravação para ouvir quando quiser</h2>
-          <p>Este espaço recebe a versão tocada e autorizada por vocês. Nenhum áudio comercial é incorporado.</p>
-          <div class="player-shell">
-            <div class="player-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
-            <p id="song-empty">A gravação será publicada aqui.</p>
-            <audio id="theme-player" controls preload="metadata" hidden>
-              Seu navegador não oferece suporte à reprodução de áudio.
-            </audio>
-            <p id="song-updated" class="song-updated" aria-live="polite"></p>
+      <section id="nossa-musica" class="music" aria-labelledby="music-title">
+        <figure class="music-image">
+          <img src="/assets/deborah-movement.png" alt="Débora em um momento tranquilo" loading="lazy" />
+        </figure>
+        <div class="music-content">
+          <p class="kicker">Nossa música</p>
+          <h2 id="music-title">O que as palavras não conseguem dizer.</h2>
+          <p class="music-note">
+            Nossa própria gravação da música de Gian &amp; Giovani, feita para você escutar no seu tempo.
+          </p>
+          <div class="record">
+            <div class="record-disc" aria-hidden="true"><span></span></div>
+            <div class="player-copy">
+              <strong>Nossa gravação</strong>
+              <p id="song-empty">A música será publicada aqui.</p>
+            </div>
           </div>
+          <audio id="theme-player" controls preload="metadata" hidden>
+            Seu navegador não oferece suporte à reprodução de áudio.
+          </audio>
+          <p id="song-updated" class="song-status" aria-live="polite"></p>
+
           <details class="audio-admin">
-            <summary>Enviar ou trocar a gravação</summary>
+            <summary>Área reservada para enviar a gravação</summary>
             <form id="audio-upload-form">
-              <label for="audio-file">Arquivo de vocês</label>
+              <label for="audio-file">Arquivo de áudio</label>
               <input id="audio-file" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,.mp3,.m4a,.wav,.ogg,.webm" required />
-              <label for="upload-key">Chave privada de envio</label>
+              <label for="upload-key">Chave privada</label>
               <input id="upload-key" type="password" autocomplete="off" required />
               <label class="rights-check" for="audio-rights">
                 <input id="audio-rights" type="checkbox" required />
-                Confirmo que esta gravação é própria ou está autorizada para publicação.
+                Confirmo que esta gravação é própria ou está autorizada.
               </label>
-              <button id="audio-upload-button" type="submit">Publicar gravação</button>
+              <button id="audio-upload-button" type="submit">Publicar nossa música</button>
               <p id="audio-upload-status" role="status" aria-live="polite"></p>
             </form>
           </details>
         </div>
-        <figure class="movement-frame">
-          <img src="/assets/deborah-movement.png" alt="Deborah em um momento de preparação para o treino" loading="lazy" />
-        </figure>
       </section>
 
-      <section class="pillars" aria-label="Eixos de atuação">
-        <article>
-          <h3>Rotina saudável</h3>
-          <p>Sequências simples para manter o dia sustentável, sem perfeccionismo e com consistência.</p>
-        </article>
-        <article>
-          <h3>Movimento em presença</h3>
-          <p>Práticas de cuidado físico com foco em autonomia, adaptação e constância.</p>
-        </article>
-        <article>
-          <h3>Bem-estar humano</h3>
-          <p>Conexão entre corpo, descanso, alimentação e vínculos positivos no cotidiano.</p>
-        </article>
+      <section class="letter" aria-labelledby="letter-title">
+        <p class="kicker">O que eu precisava dizer</p>
+        <h2 id="letter-title">Débora,</h2>
+        <div class="letter-body">
+          <p>
+            Você ocupa um lugar em mim que não nasceu de um impulso. Cresceu no tempo,
+            nas conversas, nos silêncios e em tudo aquilo que eu ainda não consegui dizer direito.
+          </p>
+          <p>
+            Fiz esta página porque alguns sentimentos merecem cuidado. Não quero transformar
+            o que sinto em cobrança, nem pedir que você responda agora. Quero apenas que conheça
+            a verdade que existe em mim.
+          </p>
+          <p>
+            Quando nossa música tocar, escute sem peso. Receba como um gesto sincero de alguém
+            para quem você é única, importante e impossível de esquecer.
+          </p>
+          <p class="declaration">Eu amo você.</p>
+          <p class="signature">Rafael</p>
+        </div>
       </section>
 
-      <section class="timeline" aria-label="Rotina recomendada">
-        <h2>Rotina sugerida para dias corridos</h2>
-        <ol>
-          <li><strong>Manhã:</strong> hidratação, pausa de respiração e alongamento.</li>
-          <li><strong>Início do dia:</strong> prioridade de tarefas e sequência curta de movimento.</li>
-          <li><strong>Fim da tarde:</strong> caminhada leve, revisão de progresso e descarregue mental.</li>
-          <li><strong>Noite:</strong> higiene do sono, luz baixa e preparo para descanso reparador.</li>
-        </ol>
-      </section>
-
-      <section id="contato" class="contact" aria-labelledby="contato-title">
-        <h2 id="contato-title">Contato e agenda de bem-estar</h2>
-        <p>Atualize seus lembretes para receber conteúdo de rotina com contexto local.</p>
-        <form id="prefs-form" aria-label="Preferências de lembretes locais">
-          <label for="pref-hora">Hora preferencial de lembrete</label>
-          <input id="pref-hora" name="pref-hora" type="time" value="08:00" required />
-
-          <label for="pref-msg">Lembrete do dia</label>
-          <input
-            id="pref-msg"
-            name="pref-msg"
-            type="text"
-            maxlength="80"
-            placeholder="Ex: Treino leve e 2L de água"
-          />
-
-          <button type="submit">Salvar lembretes</button>
-        </form>
-        <p id="status" role="status" aria-live="polite"></p>
-      </section>
-
-      <section class="notice">
-        <h2>Importante</h2>
-        <p>
-          O conteúdo é educativo e não substitui atendimento profissional nem orientação médica individual.
-          Em caso de dor persistente, tontura, falta de ar ou sintomas graves, procure atendimento adequado.
-        </p>
+      <section class="closing">
+        <p>Leia no seu tempo. Guarde apenas o que fizer sentido para você.</p>
+        <a href="#nossa-musica">Ouvir novamente</a>
       </section>
     </main>
-
-    <footer>
-      <p>© <span id="year"></span> Deborah Silva. Uso pessoal e profissional de conteúdo educativo.</p>
-      <p>
-        Siga no Instagram:
-        <a href="https://instagram.com/deboradisilva" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Deborah Silva">@deboradisilva</a>
-      </p>
-    </footer>
 
     <script src="/main.js" defer></script>
   </body>

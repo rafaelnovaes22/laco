@@ -40,6 +40,9 @@ function storeThemeSong(audio, mimeType) {
 
 app.use((_, res, next) => {
   res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
   next();
 });
 app.use(express.static(publicPath));
