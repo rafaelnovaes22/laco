@@ -19,7 +19,7 @@ let songAvailable = false;
 function showSong(updatedAt) {
   player.src = `/api/theme-song?v=${encodeURIComponent(updatedAt)}`;
   player.hidden = false;
-  songEmpty.textContent = 'Nossa música está pronta para tocar.';
+  songEmpty.textContent = 'A música que escolhi está pronta para tocar.';
   songUpdated.textContent = 'Gravação disponível.';
   songAvailable = true;
 }
@@ -63,7 +63,7 @@ async function handleUpload(event) {
   }
 
   uploadButton.disabled = true;
-  uploadStatus.textContent = 'Enviando nossa música...';
+  uploadStatus.textContent = 'Enviando a música...';
   try {
     const response = await uploadSong(file, uploadKey.value);
     const result = await response.json();
