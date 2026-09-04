@@ -3,116 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Para Débora</title>
-    <meta name="description" content="Uma mensagem feita para uma pessoa só." />
-    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex" />
-    <meta name="theme-color" content="#3a0f18" />
-    <meta property="og:title" content="Para Débora" />
-    <meta property="og:description" content="Existe algo que eu queria que você ouvisse." />
+    <title>Laço | Transforme sentimentos em páginas inesquecíveis</title>
+    <meta name="description" content="Crie uma página afetiva personalizada com sua história, suas fotos e sua música para qualquer pessoa e ocasião." />
+    <meta name="theme-color" content="#173f3a" />
+    <meta property="og:title" content="Laço, histórias que merecem um lugar" />
+    <meta property="og:description" content="Uma página única, criada com suas palavras, fotos e música." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/assets/deborah-portrait.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="icon" href="/assets/site-icon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Laço, página inicial">Laço<span>.</span></a>
+      <a class="header-action" href="#criar">Criar uma homenagem</a>
+    </header>
 
-    <section id="intro" class="intro" aria-labelledby="intro-title">
-      <p class="kicker">Uma mensagem para você</p>
-      <h1 id="intro-title">Débora</h1>
-      <p>Existe algo que eu queria que você ouvisse.</p>
-      <button id="open-letter" type="button">Abrir</button>
-    </section>
-
-    <main id="letter" inert>
-      <section class="hero" aria-labelledby="declaration-title">
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="kicker">Para uma pessoa inesquecível</p>
-          <h2 id="declaration-title">Eu amo<br />você.</h2>
-          <p class="opening">
-            Algumas verdades demoram para encontrar a forma certa de serem ditas.
-            Esta é a minha.
-          </p>
-          <a class="listen-link" href="#nossa-musica">Ouvir nossa música</a>
+          <p class="eyebrow">Para toda pessoa. Para todo momento.</p>
+          <h1 id="hero-title">Sentimentos merecem um lugar <em>bonito</em> para existir.</h1>
+          <p class="hero-lead">Conte a história, envie as fotos e escolha a música. A Laço transforma tudo em uma página única, pronta para emocionar.</p>
+          <a class="primary-action" href="#criar">Começar agora <span aria-hidden="true">↘</span></a>
         </div>
-        <figure class="portrait">
-          <img src="/assets/deborah-portrait.png" alt="Retrato de Débora" fetchpriority="high" />
-          <figcaption>Para você, com carinho e verdade.</figcaption>
-        </figure>
+        <div class="occasion-orbit" aria-label="Exemplos de ocasiões">
+          <span class="orbit-center">uma página<br />só de vocês</span>
+          <span class="occasion-tag tag-one">aniversário</span>
+          <span class="occasion-tag tag-two">amizade</span>
+          <span class="occasion-tag tag-three">dia das mães</span>
+          <span class="occasion-tag tag-four">casamento</span>
+          <span class="occasion-tag tag-five">uma terça qualquer</span>
+        </div>
       </section>
 
-      <section id="nossa-musica" class="music" aria-labelledby="music-title">
-        <figure class="music-image">
-          <img src="/assets/deborah-movement.png" alt="Débora em um momento tranquilo" loading="lazy" />
-        </figure>
-        <div class="music-content">
-          <p class="kicker">Nossa música</p>
-          <h2 id="music-title">O que as palavras não conseguem dizer.</h2>
-          <p class="music-note">
-            Este é o mesmo áudio que já te enviei. Pedi aos meninos que preparassem essa música porque queria que a gente pudesse tocá-la junto.
-          </p>
-          <div class="record">
-            <div class="record-disc" aria-hidden="true"><span></span></div>
-            <div class="player-copy">
-              <strong>A música que escolhi para nós</strong>
-              <p id="song-empty">A música será publicada aqui.</p>
+      <section class="manifesto" aria-label="Proposta da Laço">
+        <p>Não é um cartão pronto.</p>
+        <p>Não é uma mensagem copiada.</p>
+        <p class="manifesto-emphasis">É a história de vocês, do jeito que ela merece ser contada.</p>
+      </section>
+
+      <section id="criar" class="creator" aria-labelledby="creator-title">
+        <header class="creator-heading">
+          <p class="eyebrow">Crie em poucos minutos</p>
+          <h2 id="creator-title">Comece pelo que você sente.</h2>
+          <p>Não precisa escrever bonito. Conte como contaria para alguém próximo.</p>
+        </header>
+
+        <div class="creator-layout">
+          <form id="celebration-form" class="creator-form" enctype="multipart/form-data">
+            <div class="step-progress" aria-label="Etapas do formulário">
+              <button type="button" class="step-dot is-active" data-go-step="1"><span>01</span> Pessoa</button>
+              <button type="button" class="step-dot" data-go-step="2"><span>02</span> História</button>
+              <button type="button" class="step-dot" data-go-step="3"><span>03</span> Detalhes</button>
             </div>
-          </div>
-          <audio id="theme-player" controls preload="metadata" hidden>
-            Seu navegador não oferece suporte à reprodução de áudio.
-          </audio>
-          <p id="song-updated" class="song-status" aria-live="polite"></p>
 
-          <details class="audio-admin">
-            <summary>Área reservada para enviar a gravação</summary>
-            <form id="audio-upload-form">
-              <label for="audio-file">Arquivo de áudio</label>
-              <input id="audio-file" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,.mp3,.m4a,.wav,.ogg,.webm" required />
-              <label for="upload-key">Chave privada</label>
-              <input id="upload-key" type="password" autocomplete="off" required />
-              <label class="rights-check" for="audio-rights">
-                <input id="audio-rights" type="checkbox" required />
-                Confirmo que esta gravação é própria ou está autorizada.
+            <fieldset class="form-step is-active" data-step="1">
+              <legend>Para quem é essa página?</legend>
+              <div class="field-grid">
+                <label class="field field-wide" for="recipient"><span>Nome da pessoa ou do grupo</span><input id="recipient" name="recipient" type="text" maxlength="80" placeholder="Ex.: Dona Lúcia, meus pais, turma de 2010" required /></label>
+                <label class="field" for="relationship"><span>Qual é o vínculo de vocês?</span><input id="relationship" name="relationship" type="text" maxlength="80" placeholder="Ex.: minha mãe, meu melhor amigo" required /></label>
+                <label class="field" for="occasion">
+                  <span>Qual é a ocasião?</span>
+                  <input id="occasion" name="occasion" type="text" maxlength="100" list="occasion-list" placeholder="Escolha ou escreva qualquer ocasião" required />
+                  <datalist id="occasion-list">
+                    <option value="Aniversário"></option><option value="Aniversário de relacionamento"></option><option value="Casamento"></option>
+                    <option value="Dia das Mães"></option><option value="Dia dos Pais"></option><option value="Dia dos Namorados"></option>
+                    <option value="Formatura"></option><option value="Nascimento"></option><option value="Conquista profissional"></option>
+                    <option value="Pedido de desculpas"></option><option value="Agradecimento"></option><option value="Homenagem e memória"></option>
+                    <option value="Sem data, só porque sim"></option>
+                  </datalist>
+                </label>
+                <label class="field field-wide" for="celebration-date"><span>Data especial <small>(opcional)</small></span><input id="celebration-date" name="celebrationDate" type="date" /></label>
+              </div>
+              <div class="step-actions"><button class="next-button" type="button" data-next>Continuar</button></div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="2" hidden>
+              <legend>Conte um pouco da história.</legend>
+              <label class="field" for="story-prompt">
+                <span>O que essa pessoa significa para você?</span>
+                <textarea id="story-prompt" name="prompt" minlength="30" maxlength="4000" rows="8" placeholder="Conte momentos marcantes, manias, frases, lembranças e o que você gostaria que ela sentisse ao abrir a página..." required></textarea>
+                <small>Quanto mais detalhes verdadeiros, mais pessoal fica o resultado.</small>
               </label>
-              <button id="audio-upload-button" type="submit">Publicar nossa música</button>
-              <p id="audio-upload-status" role="status" aria-live="polite"></p>
-            </form>
-          </details>
+              <div class="field">
+                <span>Qual clima combina com essa história?</span>
+                <div class="tone-options">
+                  <label><input type="radio" name="tone" value="emocionante" checked /><span>Emocionante</span></label>
+                  <label><input type="radio" name="tone" value="leve e alegre" /><span>Leve e alegre</span></label>
+                  <label><input type="radio" name="tone" value="romântico" /><span>Romântico</span></label>
+                  <label><input type="radio" name="tone" value="nostálgico" /><span>Nostálgico</span></label>
+                  <label><input type="radio" name="tone" value="divertido" /><span>Divertido</span></label>
+                </div>
+              </div>
+              <label class="field" for="signature"><span>Como você quer assinar?</span><input id="signature" name="signature" type="text" maxlength="100" placeholder="Seu nome, apelido ou 'de todos nós'" required /></label>
+              <div class="step-actions"><button class="back-button" type="button" data-back>Voltar</button><button class="next-button" type="button" data-next>Continuar</button></div>
+            </fieldset>
+
+            <fieldset class="form-step" data-step="3" hidden>
+              <legend>Agora, os detalhes que só vocês têm.</legend>
+              <label class="upload-zone" for="photos">
+                <span class="upload-icon" aria-hidden="true">＋</span><strong>Envie as melhores fotos</strong>
+                <small>Até 10 imagens. A melhor vira capa, mas você pode trocar.</small>
+                <input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple />
+              </label>
+              <div id="photo-preview" class="photo-preview" aria-live="polite"></div>
+              <div class="media-grid">
+                <label class="field" for="music"><span>Arquivo da música <small>(opcional)</small></span><input id="music" name="music" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm" /></label>
+                <label class="field" for="music-link"><span>Ou link da música <small>(opcional)</small></span><input id="music-link" name="musicLink" type="url" maxlength="500" placeholder="Spotify, YouTube ou outro link" /></label>
+              </div>
+              <label class="field" for="visual-style">
+                <span>Estilo visual</span>
+                <select id="visual-style" name="visualStyle"><option value="automatico">Deixe a Laço escolher</option><option value="editorial">Editorial e elegante</option><option value="solar">Solar e vibrante</option><option value="jardim">Delicado e orgânico</option><option value="oceano">Calmo e contemplativo</option><option value="noite">Intenso e cinematográfico</option></select>
+              </label>
+              <label class="consent" for="content-consent"><input id="content-consent" name="consent" type="checkbox" required /><span>Tenho autorização para usar essas fotos e música. Entendo que o texto da história poderá ser processado por IA para criar a homenagem.</span></label>
+              <div class="step-actions"><button class="back-button" type="button" data-back>Voltar</button><button id="create-button" class="create-button" type="submit">Criar minha página</button></div>
+              <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+            </fieldset>
+          </form>
+
+          <aside class="live-preview" aria-label="Prévia da homenagem">
+            <div class="preview-card">
+              <p id="preview-occasion" class="preview-kicker">Uma ocasião especial</p>
+              <h3>Para<br /><span id="preview-name">alguém especial</span>.</h3>
+              <p id="preview-message">A sua história vai transformar esta página.</p>
+              <div class="preview-signature"><span></span><strong id="preview-signature">com carinho</strong></div>
+            </div>
+            <p class="preview-note">A prévia final será adaptada ao contexto, ao tom e às fotos escolhidas.</p>
+          </aside>
         </div>
       </section>
 
-      <section class="letter" aria-labelledby="letter-title">
-        <p class="kicker">O que eu precisava dizer</p>
-        <h2 id="letter-title">Débora,</h2>
-        <div class="letter-body">
-          <p>
-            Você ocupa um lugar em mim que não nasceu de um impulso. Cresceu no tempo,
-            nas conversas, nos silêncios e em tudo aquilo que eu ainda não consegui dizer direito.
-          </p>
-          <p>
-            Fiz esta página porque alguns sentimentos merecem cuidado. Não quero transformar
-            o que sinto em cobrança, nem pedir que você responda agora. Quero apenas que conheça
-            a verdade que existe em mim.
-          </p>
-          <p>
-            Quando essa música tocar aqui, lembre do motivo pelo qual eu a escolhi e pedi aos meninos
-            que a preparassem. Eu queria dividir esse momento com você e tocar ao seu lado.
-          </p>
-          <p class="declaration">Eu amo você.</p>
-          <p class="signature">Rafael</p>
-        </div>
-      </section>
-
-      <section class="closing">
-        <p>Leia no seu tempo. Guarde apenas o que fizer sentido para você.</p>
-        <a href="#nossa-musica">Ouvir novamente</a>
+      <section class="possibilities" aria-labelledby="possibilities-title">
+        <p class="eyebrow">Cabe toda forma de afeto</p>
+        <h2 id="possibilities-title">Grandes datas.<br />Pequenos gestos.<br /><em>Qualquer motivo.</em></h2>
+        <div class="possibility-list"><span>pais e mães</span><span>filhos</span><span>amores</span><span>amigos</span><span>famílias</span><span>mestres</span><span>equipes</span><span>quem deixou saudade</span></div>
       </section>
     </main>
 
-    <script src="/main.js" defer></script>
+    <footer><a class="brand" href="/">Laço<span>.</span></a><p>Histórias que merecem um lugar.</p></footer>
+    <script src="/app.js" defer></script>
   </body>
 </html>

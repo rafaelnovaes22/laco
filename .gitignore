@@ -1,4 +1,7 @@
 node_modules/
 dist/
+data/
+public/app.js
+public/celebration.js
 .DS_Store
 
