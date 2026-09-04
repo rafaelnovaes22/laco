@@ -19,6 +19,9 @@
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/assets/site-icon.svg" />
     <link rel="apple-touch-icon" href="/assets/site-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
     <script type="application/ld+json">
       {
@@ -57,7 +60,41 @@
           <a class="cta" href="#contato" aria-label="Abrir contato por Instagram">Falar no Instagram @deboradisilva</a>
         </div>
         <figure class="hero-portrait" aria-label="Retrato editorial de Deborah">
-          <img src="/assets/deborah-editorial.jpg" alt="Retrato editorial de Deborah Silva em uniforme branco, em ambiente institucional" />
+          <img src="/assets/deborah-portrait.png" alt="Retrato editorial de Deborah Silva" fetchpriority="high" />
+        </figure>
+      </section>
+
+      <section id="nossa-musica" class="sound-letter" aria-labelledby="music-title">
+        <div class="sound-copy">
+          <p class="eyebrow">Música tema</p>
+          <h2 id="music-title">Uma gravação para ouvir quando quiser</h2>
+          <p>Este espaço recebe a versão tocada e autorizada por vocês. Nenhum áudio comercial é incorporado.</p>
+          <div class="player-shell">
+            <div class="player-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <p id="song-empty">A gravação será publicada aqui.</p>
+            <audio id="theme-player" controls preload="metadata" hidden>
+              Seu navegador não oferece suporte à reprodução de áudio.
+            </audio>
+            <p id="song-updated" class="song-updated" aria-live="polite"></p>
+          </div>
+          <details class="audio-admin">
+            <summary>Enviar ou trocar a gravação</summary>
+            <form id="audio-upload-form">
+              <label for="audio-file">Arquivo de vocês</label>
+              <input id="audio-file" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,.mp3,.m4a,.wav,.ogg,.webm" required />
+              <label for="upload-key">Chave privada de envio</label>
+              <input id="upload-key" type="password" autocomplete="off" required />
+              <label class="rights-check" for="audio-rights">
+                <input id="audio-rights" type="checkbox" required />
+                Confirmo que esta gravação é própria ou está autorizada para publicação.
+              </label>
+              <button id="audio-upload-button" type="submit">Publicar gravação</button>
+              <p id="audio-upload-status" role="status" aria-live="polite"></p>
+            </form>
+          </details>
+        </div>
+        <figure class="movement-frame">
+          <img src="/assets/deborah-movement.png" alt="Deborah em um momento de preparação para o treino" loading="lazy" />
         </figure>
       </section>
 

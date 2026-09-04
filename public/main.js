@@ -9,9 +9,66 @@ const hourInput = document.querySelector('#pref-hora');
 const msgInput = document.querySelector('#pref-msg');
 const themeBtn = document.querySelector('#toggle-theme');
 const root = document.documentElement;
+const themePlayer = document.querySelector('#theme-player');
+const songEmpty = document.querySelector('#song-empty');
+const songUpdated = document.querySelector('#song-updated');
+const uploadForm = document.querySelector('#audio-upload-form');
+const audioFile = document.querySelector('#audio-file');
+const uploadKey = document.querySelector('#upload-key');
+const uploadButton = document.querySelector('#audio-upload-button');
+const uploadStatus = document.querySelector('#audio-upload-status');
 
 function updateYear() {
   year.textContent = new Date().getFullYear();
+}
+
+function showAvailableSong(updatedAt) {
+  themePlayer.src = `/api/theme-song?v=${encodeURIComponent(updatedAt)}`;
+  themePlayer.hidden = false;
+  songEmpty.hidden = true;
+  songUpdated.textContent = 'Gravação disponível para ouvir.';
+}
+
+async function loadThemeSong() {
+  try {
+    const response = await fetch('/api/theme-song/meta', { cache: 'no-store' });
+    const song = await response.json();
+    if (song.available) showAvailableSong(song.updatedAt);
+  } catch {
+    songUpdated.textContent = 'O player será carregado assim que a conexão voltar.';
+  }
+}
+
+async function publishThemeSong(file, key) {
+  return fetch('/api/theme-song', {
+    method: 'PUT',
+    headers: { 'Content-Type': file.type || 'audio/mpeg', 'X-Upload-Key': key },
+    body: file,
+  });
+}
+
+async function handleAudioUpload(event) {
+  event.preventDefault();
+  const file = audioFile.files?.[0];
+  if (!file || file.size > 60 * 1024 * 1024) {
+    uploadStatus.textContent = 'Escolha um áudio de até 60 MB.';
+    return;
+  }
+
+  uploadButton.disabled = true;
+  uploadStatus.textContent = 'Enviando a gravação com segurança...';
+  try {
+    const response = await publishThemeSong(file, uploadKey.value);
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'Não foi possível enviar.');
+    showAvailableSong(result.updatedAt);
+    uploadStatus.textContent = 'Gravação publicada. O player já está atualizado.';
+    uploadForm.reset();
+  } catch (error) {
+    uploadStatus.textContent = error.message;
+  } finally {
+    uploadButton.disabled = false;
+  }
 }
 
 function loadPrefs() {
@@ -58,5 +115,8 @@ form.addEventListener('submit', (event) => {
   status.textContent = 'Preferências salvas com sucesso.';
 });
 
+uploadForm.addEventListener('submit', handleAudioUpload);
+
 loadPrefs();
+loadThemeSong();
 updateYear();
