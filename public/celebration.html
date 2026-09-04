@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uma página feita com Laço</title>
+    <meta name="robots" content="noindex,nofollow,noarchive,noimageindex" />
+    <meta name="theme-color" content="#173f3a" />
+    <link rel="icon" href="/assets/site-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/celebration.css" />
+  </head>
+  <body class="is-loading" data-theme="editorial">
+    <div class="grain" aria-hidden="true"></div>
+    <div id="loading" class="loading" role="status">Abrindo esta história...</div>
+    <section id="intro" class="intro" aria-labelledby="intro-name" hidden>
+      <p class="kicker">Uma página feita especialmente para</p>
+      <h1 id="intro-name">Você</h1>
+      <p id="intro-occasion">Uma ocasião especial</p>
+      <button id="open-page" type="button">Abrir esta história</button>
+    </section>
+
+    <main id="celebration" inert hidden>
+      <section class="story-hero" aria-labelledby="headline">
+        <div class="hero-copy">
+          <p id="occasion" class="kicker"></p>
+          <p id="special-date" class="special-date" hidden></p>
+          <h2 id="headline"></h2>
+          <p id="opening" class="opening"></p>
+          <a id="memory-link" class="quiet-link" href="#memories">Ver nossas lembranças</a>
+        </div>
+        <figure id="cover-frame" class="cover-frame">
+          <img id="cover-photo" alt="" fetchpriority="high" />
+          <div class="photo-placeholder" aria-hidden="true"><span>feito de</span><strong>memórias</strong></div>
+          <figcaption id="cover-caption"></figcaption>
+        </figure>
+      </section>
+
+      <section id="memories" class="memories" aria-labelledby="memories-title">
+        <header><p class="kicker">Momentos que ficaram</p><h2 id="memories-title">Algumas histórias moram em imagens.</h2></header>
+        <div id="photo-gallery" class="photo-gallery"></div>
+      </section>
+
+      <section id="soundtrack" class="soundtrack" aria-labelledby="soundtrack-title" hidden>
+        <div class="record" aria-hidden="true"><span></span></div>
+        <div class="soundtrack-copy">
+          <p class="kicker">A música desta história</p>
+          <h2 id="soundtrack-title">Dê o play. Algumas lembranças têm som.</h2>
+          <audio id="music-player" controls preload="metadata" hidden></audio>
+          <a id="music-link" class="music-link" target="_blank" rel="noopener noreferrer" hidden>Ouvir a música escolhida</a>
+        </div>
+      </section>
+
+      <section class="letter" aria-labelledby="message-title">
+        <p class="kicker">Palavras guardadas com carinho</p>
+        <h2 id="message-title"></h2>
+        <div id="message-paragraphs" class="letter-body"></div>
+        <p id="declaration" class="declaration"></p>
+        <p id="signature" class="signature"></p>
+      </section>
+
+      <section class="closing">
+        <p id="closing"></p>
+        <button id="share-page" type="button">Compartilhar esta página</button>
+        <span id="share-status" role="status" aria-live="polite"></span>
+      </section>
+    </main>
+
+    <section id="not-found" class="not-found" hidden><p class="kicker">Laço</p><h1>Esta história não está mais aqui.</h1><a href="/">Criar uma nova página</a></section>
+    <a class="made-with" href="/">Feito com <strong>Laço.</strong></a>
+    <script src="/celebration.js" defer></script>
+  </body>
+</html>
