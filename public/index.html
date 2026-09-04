@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deborah Silva | Cuidado em Movimento</title>
+    <meta
+      name="description"
+      content="Deborah Silva une cuidado humano, rotina saudável e movimento consciente para o bem-estar diário."
+    />
+    <meta property="og:title" content="Deborah Silva | Cuidado em Movimento" />
+    <meta
+      property="og:description"
+      content="Conteúdo educativo para um bem-estar contínuo e sustentável."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/assets/site-icon.svg" />
+    <link rel="apple-touch-icon" href="/assets/site-icon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Deborah Silva",
+        "jobTitle": "Enfermeira",
+        "description": "Profissional de cuidado humano com foco em bem-estar, movimento e rotina saudável.",
+        "sameAs": ["https://instagram.com/deboradisilva"],
+        "url": "https://deborasilva.com"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <p class="eyebrow">Deborah Silva</p>
+        <h1>Cuidado em movimento</h1>
+      </div>
+      <button id="toggle-theme" class="theme-chip" aria-pressed="false" aria-label="Alternar tema claro e escuro">
+        Tema
+      </button>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="apresentacao">
+        <div class="hero-copy">
+          <p class="eyebrow">Enfermagem que cuida de quem se cuida</p>
+          <h2 id="apresentacao">Rotina, movimento e acolhimento</h2>
+          <p>
+            Um espaço para aprender, inspirar e adaptar pequenas práticas de bem-estar.
+            Conteúdos educativos e acessíveis para viver com mais presença, disciplina e
+            gentileza.
+          </p>
+          <a class="cta" href="#contato" aria-label="Abrir contato por Instagram">Falar no Instagram @deboradisilva</a>
+        </div>
+        <figure class="hero-portrait" aria-label="Retrato editorial de Deborah">
+          <img src="/assets/deborah-editorial.jpg" alt="Retrato editorial de Deborah Silva em uniforme branco, em ambiente institucional" />
+        </figure>
+      </section>
+
+      <section class="pillars" aria-label="Eixos de atuação">
+        <article>
+          <h3>Rotina saudável</h3>
+          <p>Sequências simples para manter o dia sustentável, sem perfeccionismo e com consistência.</p>
+        </article>
+        <article>
+          <h3>Movimento em presença</h3>
+          <p>Práticas de cuidado físico com foco em autonomia, adaptação e constância.</p>
+        </article>
+        <article>
+          <h3>Bem-estar humano</h3>
+          <p>Conexão entre corpo, descanso, alimentação e vínculos positivos no cotidiano.</p>
+        </article>
+      </section>
+
+      <section class="timeline" aria-label="Rotina recomendada">
+        <h2>Rotina sugerida para dias corridos</h2>
+        <ol>
+          <li><strong>Manhã:</strong> hidratação, pausa de respiração e alongamento.</li>
+          <li><strong>Início do dia:</strong> prioridade de tarefas e sequência curta de movimento.</li>
+          <li><strong>Fim da tarde:</strong> caminhada leve, revisão de progresso e descarregue mental.</li>
+          <li><strong>Noite:</strong> higiene do sono, luz baixa e preparo para descanso reparador.</li>
+        </ol>
+      </section>
+
+      <section id="contato" class="contact" aria-labelledby="contato-title">
+        <h2 id="contato-title">Contato e agenda de bem-estar</h2>
+        <p>Atualize seus lembretes para receber conteúdo de rotina com contexto local.</p>
+        <form id="prefs-form" aria-label="Preferências de lembretes locais">
+          <label for="pref-hora">Hora preferencial de lembrete</label>
+          <input id="pref-hora" name="pref-hora" type="time" value="08:00" required />
+
+          <label for="pref-msg">Lembrete do dia</label>
+          <input
+            id="pref-msg"
+            name="pref-msg"
+            type="text"
+            maxlength="80"
+            placeholder="Ex: Treino leve e 2L de água"
+          />
+
+          <button type="submit">Salvar lembretes</button>
+        </form>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="notice">
+        <h2>Importante</h2>
+        <p>
+          O conteúdo é educativo e não substitui atendimento profissional nem orientação médica individual.
+          Em caso de dor persistente, tontura, falta de ar ou sintomas graves, procure atendimento adequado.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="year"></span> Deborah Silva. Uso pessoal e profissional de conteúdo educativo.</p>
+      <p>
+        Siga no Instagram:
+        <a href="https://instagram.com/deboradisilva" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Deborah Silva">@deboradisilva</a>
+      </p>
+    </footer>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
