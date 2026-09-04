@@ -27,8 +27,13 @@ function showSong(updatedAt) {
 async function loadSong() {
   try {
     const response = await fetch('/api/theme-song/meta', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Não foi possível consultar a gravação.');
     const song = await response.json();
     if (song.available) showSong(song.updatedAt);
+    if (!song.uploadEnabled) {
+      uploadButton.disabled = true;
+      uploadStatus.textContent = 'Envio ainda não configurado pelo responsável pela página.';
+    }
   } catch {
     songUpdated.textContent = 'A música será carregada quando a conexão voltar.';
   }

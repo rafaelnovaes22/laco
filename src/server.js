@@ -11,6 +11,7 @@ const publicPath = path.join(__dirname, '..', 'public');
 const mediaPath = process.env.MEDIA_PATH || path.join(__dirname, '..', 'data');
 const audioPath = path.join(mediaPath, 'theme-song.audio');
 const metadataPath = path.join(mediaPath, 'theme-song.json');
+const AUDIO_TYPES = new Set(['audio/mpeg', 'audio/mp4', 'audio/x-m4a', 'audio/wav', 'audio/x-wav', 'audio/ogg', 'audio/webm']);
 
 function readThemeSong() {
   if (!existsSync(audioPath) || !existsSync(metadataPath)) return null;
@@ -39,7 +40,7 @@ function storeThemeSong(audio, mimeType) {
 }
 
 app.use((_, res, next) => {
-  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Robots-Tag', 'noindex, nofollow, noarchive');
   res.setHeader('Referrer-Policy', 'no-referrer');
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -54,7 +55,7 @@ app.get('/health', (_, res) => {
 app.get('/api/theme-song/meta', (_, res) => {
   res.setHeader('Cache-Control', 'no-store');
   const song = readThemeSong();
-  res.json(song ? { available: true, updatedAt: song.updatedAt } : { available: false });
+  res.json({ available: Boolean(song), updatedAt: song?.updatedAt, uploadEnabled: Boolean(process.env.UPLOAD_KEY) });
 });
 
 app.get('/api/theme-song', (_, res) => {
@@ -67,10 +68,18 @@ app.get('/api/theme-song', (_, res) => {
   return res.sendFile(audioPath);
 });
 
-app.put('/api/theme-song', express.raw({ type: 'audio/*', limit: '60mb' }), (req, res) => {
+/** @type {import('express').RequestHandler} */
+function authorizeUpload(req, res, next) {
+  if (!process.env.UPLOAD_KEY) return res.status(503).json({ error: 'Envio ainda não configurado.' });
   if (!hasValidUploadKey(req.get('x-upload-key'))) {
     return res.status(401).json({ error: 'Chave de envio inválida.' });
   }
+  const mimeType = req.get('content-type')?.split(';')[0].toLowerCase();
+  if (!AUDIO_TYPES.has(mimeType)) return res.status(415).json({ error: 'Formato de áudio não aceito.' });
+  next();
+}
+
+app.put('/api/theme-song', authorizeUpload, express.raw({ type: 'audio/*', limit: '60mb' }), (req, res) => {
   if (!Buffer.isBuffer(req.body) || !req.body.length) {
     return res.status(400).json({ error: 'Selecione um arquivo de áudio válido.' });
   }
@@ -80,8 +89,15 @@ app.put('/api/theme-song', express.raw({ type: 'audio/*', limit: '60mb' }), (req
   return res.status(201).json({ ok: true, updatedAt: song.updatedAt });
 });
 
-app.get('*', (_, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
+app.use((_, res) => {
+  res.status(404).json({ error: 'Recurso não encontrado.' });
+});
+
+/** @type {import('express').ErrorRequestHandler} */
+app.use((error, _req, res, _next) => {
+  const status = error.status === 413 ? 413 : 500;
+  const message = status === 413 ? 'Escolha um áudio de até 60 MB.' : 'Não foi possível salvar a gravação.';
+  res.status(status).json({ error: message });
 });
 
 export default app;
@@ -89,6 +105,6 @@ export default app;
 if (process.env.NODE_ENV !== 'test') {
   const port = Number(process.env.PORT) || 3000;
   app.listen(port, () => {
-    console.log(`Servidor on-line: http://localhost:${port}`);
+    console.log(JSON.stringify({ event: 'server.started', port }));
   });
 }

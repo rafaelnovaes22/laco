@@ -1,11 +1,11 @@
 {
-  "name": "Deborah Silva",
-  "short_name": "Deborah",
-  "description": "Conteúdos educativos de rotina saudável, cuidado humano e bem-estar.",
+  "name": "Para Débora",
+  "short_name": "Para Débora",
+  "description": "Uma mensagem feita para uma pessoa só.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#3a0f18",
+  "theme_color": "#3a0f18",
   "icons": [
     {
       "src": "/assets/site-icon.svg",
