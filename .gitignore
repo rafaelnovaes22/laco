@@ -1,0 +1,22 @@
+node_modules/
+dist/
+data/
+public/app.js
+public/celebration.js
+.DS_Store
+
+
+# padronizacao 2026-10-31
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.reflex/
+coverage/
+.next/
+dist/
+.output/
