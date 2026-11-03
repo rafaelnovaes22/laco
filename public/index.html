@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uma mensagem para você</title>
+    <meta name="description" content="Uma mensagem feita para uma pessoa só." />
+    <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex" />
+    <meta name="theme-color" content="#3a0f18" />
+    <meta property="og:title" content="Uma mensagem para você" />
+    <meta property="og:description" content="Existe algo que eu queria que você ouvisse." />
+    <meta property="og:type" content="website" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/assets/site-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <section id="intro" class="intro" aria-labelledby="intro-title">
+      <p class="kicker" data-cfg="intro.kicker">Uma mensagem para você</p>
+      <h1 id="intro-title" data-cfg="recipient"></h1>
+      <p data-cfg="intro.text"></p>
+      <button id="open-letter" type="button" data-cfg="intro.button">Abrir</button>
+    </section>
+
+    <main id="letter" inert>
+      <section class="hero" aria-labelledby="declaration-title">
+        <div class="hero-copy">
+          <p class="kicker" data-cfg="hero.kicker"></p>
+          <h2 id="declaration-title" data-cfg-html="hero.title"></h2>
+          <p class="opening" data-cfg="hero.opening"></p>
+          <a class="listen-link" href="#nossa-musica">Ouvir nossa música</a>
+        </div>
+        <figure class="portrait">
+          <img data-cfg-img="hero" alt="" fetchpriority="high" />
+          <figcaption data-cfg="hero.caption"></figcaption>
+        </figure>
+      </section>
+
+      <section id="nossa-musica" class="music" aria-labelledby="music-title">
+        <figure class="music-image">
+          <img data-cfg-img="music" alt="" loading="lazy" />
+        </figure>
+        <div class="music-content">
+          <p class="kicker" data-cfg="music.kicker"></p>
+          <h2 id="music-title" data-cfg="music.title"></h2>
+          <p class="music-note" data-cfg="music.note"></p>
+          <div class="record">
+            <div class="record-disc" aria-hidden="true"><span></span></div>
+            <div class="player-copy">
+              <strong data-cfg="music.playerLabel"></strong>
+              <p id="song-empty">A música será publicada aqui.</p>
+            </div>
+          </div>
+          <audio id="theme-player" controls preload="metadata" hidden>
+            Seu navegador não oferece suporte à reprodução de áudio.
+          </audio>
+          <p id="song-updated" class="song-status" aria-live="polite"></p>
+
+          <details class="audio-admin">
+            <summary>Área reservada para enviar a gravação</summary>
+            <form id="audio-upload-form">
+              <label for="audio-file">Arquivo de áudio</label>
+              <input id="audio-file" type="file" accept="audio/mpeg,audio/mp4,audio/wav,audio/ogg,audio/webm,.mp3,.m4a,.wav,.ogg,.webm" required />
+              <label for="upload-key">Chave privada</label>
+              <input id="upload-key" type="password" autocomplete="off" required />
+              <label class="rights-check" for="audio-rights">
+                <input id="audio-rights" type="checkbox" required />
+                Confirmo que esta gravação é própria ou está autorizada.
+              </label>
+              <button id="audio-upload-button" type="submit">Publicar música</button>
+              <p id="audio-upload-status" role="status" aria-live="polite"></p>
+            </form>
+          </details>
+        </div>
+      </section>
+
+      <section class="letter" aria-labelledby="letter-title">
+        <p class="kicker" data-cfg="letter.kicker"></p>
+        <h2 id="letter-title" data-cfg="recipient" data-suffix=","></h2>
+        <div class="letter-body">
+          <div id="letter-paragraphs"></div>
+          <p class="declaration" data-cfg="letter.closingLine"></p>
+          <p class="signature" data-cfg="sender"></p>
+        </div>
+      </section>
+
+      <section class="closing">
+        <p data-cfg="closing"></p>
+        <a href="#nossa-musica">Ouvir novamente</a>
+      </section>
+    </main>
+
+    <script src="/config.js"></script>
+    <script src="/main.js" defer></script>
+  </body>
+</html>
